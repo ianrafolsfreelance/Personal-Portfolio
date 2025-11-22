@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ian Rafols — Portfolio</title>
+  <meta name="description" content="Ian Rafols — Freelance Web Developer (WordPress & Next.js)" />
+
+  <style>
+    :root{
+      /* Palette sampled/derived from the provided cover image */
+      --bg:#0f0f0f;            /* deep charcoal leather */
+      --panel:#181818;         /* slightly lighter surface */
+      --muted:#9da3a6;         /* soft gray for text */
+      --accent:#d8c8ad;        /* warm beige from pot/keyboard highlights */
+      --white:#ffffff;
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --max-width:1100px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    html,body{height:100%;margin:0;background:var(--bg);color:var(--white);}
+    .wrap{max-width:var(--max-width);margin:0 auto;padding:32px;}
+
+    /* HERO */
+    .hero{
+      display:flex;align-items:center;gap:36px;padding:48px;border-radius:18px;background-image: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url('/mnt/data/Ian Rafols (2).png');background-size:cover;background-position:center center;box-shadow:0 8px 30px rgba(0,0,0,0.6);
+    }
+    .hero-left{flex:1;}
+    .name{font-weight:700;font-size:34px;margin:0 0 6px;letter-spacing:0.2px;color:var(--white);}
+    .role{font-size:18px;margin:0 0 14px;color:var(--muted);}
+    .tagline{font-size:15px;line-height:1.4;color:var(--muted);max-width:620px}
+    .contact{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+    .pill{background:var(--glass);padding:8px 12px;border-radius:999px;font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:8px}
+
+    /* Quick CTA */
+    .cta{margin-left:auto}
+    .btn{background:transparent;border:1px solid var(--accent);padding:10px 14px;border-radius:10px;color:var(--accent);text-decoration:none;font-weight:600}
+
+    /* Main layout */
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:28px;margin-top:28px}
+
+    /* Projects */
+    .projects{display:grid;gap:14px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);}
+    .project-title{font-weight:600;margin:0 0 6px;color:var(--accent)}
+    .project-desc{margin:0;color:var(--muted);font-size:14px}
+    .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+
+    /* Sidebar */
+    .sidebar .section{margin-bottom:18px}
+    .section h4{margin:0 0 8px;font-size:13px;color:var(--muted);}
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{padding:7px 10px;background:rgba(255,255,255,0.02);border-radius:8px;font-size:13px;color:var(--muted)}
+
+    /* Footer */
+    footer{margin-top:36px;padding:22px;border-radius:12px;background:transparent;text-align:center;color:var(--muted);font-size:13px}
+
+    /* Responsive */
+    @media (max-width:880px){
+      .grid{grid-template-columns:1fr;}
+      .projects-grid{grid-template-columns:1fr}
+      .hero{flex-direction:column;align-items:flex-start}
+      .cta{margin-left:0}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero" role="banner">
+      <div class="hero-left">
+        <h1 class="name">Ian Rafols</h1>
+        <div class="role">Freelance Web Developer — WordPress • Next.js • Frontend</div>
+        <p class="tagline">I build clean, reliable websites and small web apps. I learned by doing — WordPress, Elementor, custom JS, and modern frameworks like Next.js. Humble, dependable, and always learning.</p>
+        <div class="contact">
+          <div class="pill">📧 ianrafols.freelance@gmail.com</div>
+          <div class="pill">🛠️ WordPress • Next.js</div>
+          <a class="btn" href="#projects">View projects</a>
+        </div>
+      </div>
+      <div class="cta">
+        <a class="btn" href="#contact">Hire me</a>
+      </div>
+    </header>
+
+    <main class="grid" role="main">
+      <section>
+        <div class="card" id="about">
+          <h3 style="margin:0 0 8px">About</h3>
+          <p style="margin:0;color:var(--muted);line-height:1.5">I transitioned to online freelancing about six years ago after starting with WordPress. I learned HTML, CSS, JavaScript, jQuery and PHP while delivering real client projects. I later moved into Next.js and modern frontend patterns. I focus on solving client problems, shipping on time, and steadily improving the code I deliver.</p>
+        </div>
+
+        <h3 style="margin:20px 0 8px">Projects</h3>
+        <div class="projects">
+          <div class="projects-grid" id="projects">
+            <div class="card">
+              <div class="project-title">WordPress Business Site</div>
+              <div class="project-desc">Full site built with Elementor and custom PHP tweaks. Responsive, SEO-ready, and easy for the client to manage.</div>
+            </div>
+            <div class="card">
+              <div class="project-title">Task Manager (Custom)</div>
+              <div class="project-desc">A lightweight task-management app built inside WordPress using custom APIs and polling for updates.</div>
+            </div>
+            <div class="card">
+              <div class="project-title">Next.js Marketing Site</div>
+              <div class="project-desc">Landing page and marketing site built with Next.js and Tailwind. Deployed on OVH, optimized for performance.</div>
+            </div>
+            <div class="card">
+              <div class="project-title">Next.js Internal Tool</div>
+              <div class="project-desc">Small admin tool built in Next.js for internal use — CRUD, API integrations, and practical UX.</div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <aside class="sidebar">
+        <div class="section card">
+          <h4>Skills</h4>
+          <div class="skills">
+            <div class="skill">Web Development</div>
+            <div class="skill">WordPress</div>
+            <div class="skill">Next.js</div>
+            <div class="skill">React</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">HTML/CSS</div>
+            <div class="skill">Tailwind</div>
+            <div class="skill">PHP</div>
+            <div class="skill">jQuery</div>
+            <div class="skill">API Integration</div>
+          </div>
+        </div>
+
+        <div class="section card">
+          <h4>Contact</h4>
+          <p style="margin:0 0 8px;color:var(--muted)">Email:</p>
+          <a href="mailto:ianrafols.freelance@gmail.com" class="pill" style="text-decoration:none">ianrafols.freelance@gmail.com</a>
+        </div>
+
+        <div class="section card">
+          <h4>Availability</h4>
+          <p style="margin:0;color:var(--muted)">Open to freelance projects — focused on small businesses and startups.</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      Built by Ian • Freelance Web Developer • WordPress & Next.js
+    </footer>
+  </div>
+
+  <script>
+    // Simple small script: keyboard shortcut to copy email (press 'c')
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'c' || e.key === 'C'){
+        navigator.clipboard && navigator.clipboard.writeText('ianrafols.freelance@gmail.com')
+          .then(()=>{
+            alert('Email copied to clipboard');
+          }).catch(()=>{});
+      }
+    });
+  </script>
+</body>
+</html>
